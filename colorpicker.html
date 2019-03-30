@@ -16,6 +16,7 @@
 </head>
 <body>
   <div class="container-fluid">
+    <!-- Row for your name! -->
     <div class=row>
       <div class="col-sm-12">
         <span id=title>About YOUR NAME</span>
@@ -27,7 +28,7 @@
       </div>
     </div>
 
-
+    <!-- Row for your favorite number and favorite song link! -->
     <div class=row>
       <div class="col-sm-6">
         <div class="halfrow">
@@ -43,6 +44,7 @@
       </div>
     </div>
 
+    <!-- Row to display all the colors generated that match your picture you chose! -->
     <div class=row>
       <div class="col-sm-2 col-sm-offset-1 color" id=color1>
       </div>
@@ -56,9 +58,11 @@
       </div>
     </div>
 
+    <!-- Row for the basic color generator -->
     <div class=row>
       <div class="col-sm-12" id=pickacolor>
-        <button class="btn btn-default" onclick=randomColor()>Get Random Color</button>
+        <button class="btn btn-default" onclick=randomColor()>Get Random Color</button><br><br>
+        <p id=colorGenerated></p>
       </div>
     </div>
 
@@ -68,14 +72,17 @@
 
   <script>
       function randomColor() {
-        //get random red green and blue amounts
+        //get random red green and blue amounts = rgb values each range 0-255
         var red = Math.floor(Math.random() * 256);
         var green = Math.floor(Math.random() * 256);
         var blue = Math.floor(Math.random() * 256);
 
-        // //assign it to the background color of pickacolor div
+        //assign it to the background color of pickacolor div
         var divtoedit = document.getElementById('pickacolor');
         divtoedit.style.backgroundColor = 'rgb('+red + ',' + green + ',' + blue + ')';
+
+        //set the text to display the color information
+        document.getElementById('colorGenerated').innerHTML = 'rgb('+red + ',' + green + ',' + blue + ')';
       }
   </script>
 </body>
